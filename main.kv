@@ -18,6 +18,8 @@
     spacing: "12dp"
     size_hint_y: None
     height: "60dp"
+    theme_text_color: "Custom"
+    text_color: self.theme_cls.text_color
 
     MDTextField:
         id: edit_task
@@ -36,7 +38,9 @@ Screen:
     TooltipMDFloatingActionButton:
         id: theme_button
         icon: 'pencil'
-        md_bg_color: app.theme_cls.primary_color
+        md_bg_color: app.theme_cls.opposite_bg_light
+        theme_text_color: "Custom"
+        text_color: self.theme_cls.opposite_text_color
         pos_hint: {"center_x": 0.92, "center_y": 0.95}
         tooltip_text: 'Change Theme!'
         on_release: app.open_theme_dialog()
@@ -45,6 +49,8 @@ Screen:
     MDLabel:
         id: no_task_label
         text: 'You Do Not Have Any Active Task!'
+        theme_text_color: "Custom"
+        text_color: self.theme_cls.text_color
         font_size: 15
         halign: 'center'
     MDBoxLayout:
@@ -67,6 +73,7 @@ Screen:
 
     TooltipMDFloatingActionButton:
         theme_text_color: "Custom"
+        text_color: self.theme_cls.opposite_text_color
         user_font_size: "32sp"
         icon: "plus"
         md_bg_color: app.theme_cls.primary_color
